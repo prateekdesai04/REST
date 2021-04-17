@@ -3,24 +3,29 @@ const app = express(); //execute package
 const mongoose = require('mongoose');
 require('dotenv/config'); // to get .env variables
 
-// Middleware
-app.use('/posts', () => {
-  console.log('Middleware Runs');
-});
+// USING BODY PARSER - Parses the request body
+app.use(express.urlencoded({ extended: true })); // here this will execute when we hit any request, this is a middleware
+app.use(express.json());
 
-// Create Routes
+// CREATE ROUTES
+
+// Import routes, and execute middleware
+const postsRoute = require('./routes/posts');
+
+app.use('/posts', postsRoute); // Everytime you go to the posts, use postsRoute.
+// The reason we do this is because we can segegrate routes based on users or any components and use middleware to execute them
+
+// this is the home route
 app.get('/', (req, res) => {
   res.send('Home');
 });
 
-app.get('/posts', (req, res) => res.send('Posts'));
-
-// Connect to DB
+// CONNECT TO DB
 mongoose.connect(
   process.env.DB_CONNECTION,
   { useUnifiedTopology: true, useNewUrlParser: true },
   () => console.log('Connected to DB !')
 );
 
-// Start listening to the server
+// START LISTENING TO THE SERVER
 app.listen(4200, () => console.log('Server Up and Running...'));
