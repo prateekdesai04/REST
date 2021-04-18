@@ -7,7 +7,7 @@
 
 ## Fetch the API to front-end
 
-- Go to codepen.io and type in the JS window and check the console, cheers !
+- Go to codepen.io and type the code given below in the JS window and check the console, cheers !
 
 - fetch('http://localhost:4200/posts')
   .then(result => {
