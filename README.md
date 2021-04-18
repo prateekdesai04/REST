@@ -1,5 +1,6 @@
 # REST
 
+- A basic boilerplate for anyone looking to build REST APIs (with comments).
 - Motive is to learn to build RESTful APIs with Node.js, Express & MongoDB.
 - To learn status codes, middleware and routes etc..
 - Basic CRUD operations.
