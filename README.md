@@ -5,7 +5,7 @@
 - To learn status codes, middleware and routes etc..
 - Basic CRUD operations.
 
-## Fetch the API to front-end
+## Fetch the API to the front-end
 
 - Go to codepen.io and type the code given below in the JS window and check the console, cheers !
 
