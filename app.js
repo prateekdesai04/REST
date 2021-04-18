@@ -1,9 +1,13 @@
 const express = require('express'); //import package
 const app = express(); //execute package
+const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv/config'); // to get .env variables
 
-// USING BODY PARSER - Parses the request body
+//Enable CORS (Using Middleware)
+app.use(cors()); // allows anyone to make a request to this api apart from this local machine
+
+// USING BODY PARSER (A Middleware) - Parses the request body
 app.use(express.urlencoded({ extended: true })); // here this will execute when we hit any request, this is a middleware
 app.use(express.json());
 
